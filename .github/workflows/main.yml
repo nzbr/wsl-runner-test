@@ -18,6 +18,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Install nix
         uses: cachix/install-nix-action@v16
@@ -42,6 +43,10 @@ jobs:
 
   test:
     runs-on: wsl2
+    
+    needs:
+      - build
+      
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
