@@ -57,7 +57,7 @@ jobs:
           name: installer
           
       - name: Import WSL Distro
-        run: wsl --import "${{github.sha}}" .\"${{github.sha}}" result\tarball\nixos-wsl-installer.tar.gz --version 2
+        run: wsl --import "${{github.sha}}" .\"${{github.sha}}" nixos-wsl-installer.tar.gz --version 2
         
       - name: Boot the distro
         run: wsl -d "${{github.sha}}" systemctl status
