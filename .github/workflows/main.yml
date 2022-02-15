@@ -31,6 +31,8 @@ jobs:
           file-url: https://s3.eu-central-1.wasabisys.com/nzbr/nixos-wsl-installer.tar.gz
           file-name: installer.tar.gz
           
+      - run: whoami
+          
       - name: Import WSL Distro
         run: wsl --import "${{github.sha}}" .\"${{github.sha}}" installer.tar.gz --version 2
         
